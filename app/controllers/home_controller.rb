@@ -1,15 +1,18 @@
 class HomeController < ApplicationController
   def index
+    @posts = Post.all
+    
+  end
+  
+  def write
   end
 
-  def home
-  end
+  def create
+    posts = Post.new
+    posts.title = params[:title]
+    posts.content = params[:content]
+    posts.save
 
-  def result
-    @plus_result = params[:num1].to_i + params[:num2].to_i
-  end
-
-  def plus
-    @plus_result = params[:num1].to_i + params[:num2].to_i
+    redirect_to '/'
   end
 end

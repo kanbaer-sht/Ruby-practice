@@ -1,5 +1,8 @@
-<form method="post" action="/result">
-    <input type="number" name="num1" /> +
-    <input type="number" name="num2" />
-    <input type="submit" />
+<h1>Index</h1>
+<% @posts.each do |post| %>
+제목 : <%= post.title %><br>
+내용 : <%= post.content %><br><br>
+<% end %>
+<form method="get" action="/write">
+    <input type="submit" value="글쓰기" />
 </form>
